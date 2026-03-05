@@ -1,0 +1,16 @@
+class metoverloading{
+
+    void show() {
+        System.out.println("This is a simple sentence.");
+    }
+
+    void show(String s) {
+        System.out.println("This is another simple sentence: " + s);
+    }
+
+    public static void main(String[] args) {
+        metoverloading d = new metoverloading();
+        d.show();
+        d.show("Hello");
+    }
+}

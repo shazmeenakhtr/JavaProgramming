@@ -1,0 +1,16 @@
+class Car {
+    void start() {
+        System.out.println("Car starts");
+    }
+
+    public static void main(String[] args) {
+        ElectricCar c = new ElectricCar();
+        c.start();
+    }
+}
+
+class ElectricCar extends Car {
+    void start() {
+        System.out.println("Electric car starts silently");
+    }
+}

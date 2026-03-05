@@ -1,0 +1,16 @@
+class Shape {
+    double area() {
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        System.out.println(r.area());
+    }
+}
+
+class Rectangle extends Shape {
+    double area() {
+        return 5 * 3;
+    }
+}
