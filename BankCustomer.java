@@ -1,0 +1,65 @@
+import java.util.Scanner;
+interface Bank {
+    void deposit(double amount);
+    void withdraw(double amount);
+    void displayBalance();
+}
+
+class Customer {
+    String name;
+    int id;
+
+    Customer(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+    public void displayDetails(){
+        System.out.println("Customer Name: " + name);
+        System.out.println("Customer ID: " + id);
+    }
+}
+
+class Account extends Customer implements Bank {
+    double balance;
+
+    Account(String name, int id, double balance) {
+        super(name, id);
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        balance = balance + amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+        }
+    }
+
+    public void displayBalance() {
+        System.out.println("Current balance : " + balance);
+    }
+}
+
+public class BankCustomer {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Account a = new Account("Shazmeen", 45335, 5);
+        a.displayDetails();
+        a.displayBalance();
+
+        System.out.println("Enter amount to deposit:");
+        double depositAmt = sc.nextDouble();
+        a.deposit(depositAmt);
+
+        System.out.println("Enter amount to withdraw:");
+        double withdrawAmt = sc.nextDouble();
+        a.withdraw(withdrawAmt);
+
+        a.displayBalance();
+
+        sc.close();
+    }
+}
