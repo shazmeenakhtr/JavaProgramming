@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class Point {
+    int x, y;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        x = sc.nextInt();
+        y = sc.nextInt();
+    }
+}
+
+class Circle {
+    double radius;
+    Point p = new Point();
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        radius = sc.nextDouble();
+        p.input();
+    }
+
+    void display() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Radius = " + radius);
+        System.out.println("Point = (" + p.x + "," + p.y + ")");
+        System.out.println("Area = " + area);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.input();
+        c.display();
+    }
+}
