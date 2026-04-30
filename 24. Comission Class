@@ -3,12 +3,10 @@ import java.util.*;
 class Commission {
     int sales;
 
-    // constructor
     Commission(int s) {
         sales = s;
     }
 
-    // method to calculate commission
     double commission() {
         double com;
 
