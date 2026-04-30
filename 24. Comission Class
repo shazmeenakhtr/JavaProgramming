@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Commission {
+    int sales;
+
+    // constructor
+    Commission(int s) {
+        sales = s;
+    }
+
+    // method to calculate commission
+    double commission() {
+        double com;
+
+        if (sales > 10000) {
+            com = sales * 0.1;
+        } else {
+            com = sales * 0.05;
+        }
+
+        return com;
+    }
+}
+
+class Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int s;
+
+        System.out.print("Enter sales: ");
+        s = sc.nextInt();
+
+        if (s < 0) {
+            System.out.println("Invalid Input");
+        } else {
+            Commission c = new Commission(s);
+            double res = c.commission();
+            System.out.println("Commission = " + res);
+        }
+    }
+}
