@@ -1,0 +1,24 @@
+class A {
+    int a;
+
+    A() {
+        a = 10;
+        System.out.println("Default = " + a);
+    }
+
+    A(int x) {
+        a = x;
+        System.out.println("One value = " + a);
+    }
+
+    A(int x, int y) {
+        int sum = x + y;
+        System.out.println("Sum = " + sum);
+    }
+
+    public static void main(String[] args) {
+        A obj1 = new A();        // no argument
+        A obj2 = new A(5);       // one argument
+        A obj3 = new A(3, 4);    // two arguments
+    }
+}
