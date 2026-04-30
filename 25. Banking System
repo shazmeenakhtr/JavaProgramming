@@ -1,0 +1,63 @@
+class BankAccount {
+    String acc;
+    double bal;
+
+    BankAccount(String a, double b) {
+        acc = a;
+        bal = b;
+    }
+
+    void deposit(double amt) {
+        bal = bal + amt;
+    }
+
+    void withdraw(double amt) {
+        if (bal >= amt) {
+            bal = bal - amt;
+        } else {
+            System.out.println("Not enough balance");
+        }
+    }
+
+    void show() {
+        System.out.println("Account = " + acc);
+        System.out.println("Balance = " + bal);
+    }
+}
+class SavingsAccount extends BankAccount {
+    double rate;
+
+    SavingsAccount(String a, double b, double r) {
+        super(a, b);
+        rate = r;
+    }
+
+    void addInterest() {
+        bal = bal + (bal * rate / 100);
+    }
+}
+
+class FixedDepositAccount extends SavingsAccount {
+    int time;
+
+    FixedDepositAccount(String a, double b, double r, int t) {
+        super(a, b, r);
+        time = t;
+    }
+
+    void maturity() {
+        double m = bal + (bal * rate * time / 100);
+        System.out.println("Maturity Amount = " + m);
+    }
+}
+class MainApp {
+    public static void main(String[] args) {
+
+        FixedDepositAccount f = new FixedDepositAccount("A101", 10000, 5, 12);
+
+        f.deposit(2000);     
+        f.addInterest();   
+        f.maturity();      
+
+        f.show();       
+        }
