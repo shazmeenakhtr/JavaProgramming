@@ -1,0 +1,12 @@
+class B {
+    int a;
+
+    B(int x) {
+        a = x;
+        System.out.println("Value = " + a);
+    }
+
+    public static void main(String[] args) {
+        B obj = new B(20);
+    }
+}
