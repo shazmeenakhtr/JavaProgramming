@@ -1,11 +1,7 @@
 class Temp {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        float c, f;
-
-        System.out.print("Enter Celsius: ");
-        c = sc.nextFloat();
+        float c = 25;
+        float f;
 
         f = (c * 9/5) + 32;
 
