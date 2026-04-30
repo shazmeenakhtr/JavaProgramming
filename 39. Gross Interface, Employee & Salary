@@ -1,0 +1,46 @@
+interface Gross {
+    double calculateGross();
+}
+
+class Employee {
+    String name;
+    int empId;
+
+    void getEmployee(String n, int id) {
+        name = n;
+        empId = id;
+    }
+
+    void displayEmployee() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee ID: " + empId);
+    }
+}
+
+class Salary extends Employee implements Gross {
+    double basic, hra, da;
+
+    void getSalary(double b, double h, double d) {
+        basic = b;
+        hra = h;
+        da = d;
+    }
+
+    public double calculateGross() {
+        return basic + hra + da;
+    }
+
+    void displaySalary() {
+        displayEmployee();
+        System.out.println("Gross Salary: " + calculateGross());
+    }
+}
+
+class Main2 {
+    public static void main(String[] args) {
+        Salary s = new Salary();
+        s.getEmployee("Anjali", 101);
+        s.getSalary(20000, 5000, 3000);
+        s.displaySalary();
+    }
+}
